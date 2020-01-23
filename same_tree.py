@@ -15,8 +15,6 @@ class TreeNode(object):
 def same_tree(tree1,tree2):
 	"""Given two binary trees returns T/F if they're equal"""
 
-	current1 = tree1
-	current2 = tree2
 	to_check1 = [tree1.left,tree1.right,tree1]
 	to_check2 = [tree2.left,tree2.right,tree2]
 
@@ -24,7 +22,7 @@ def same_tree(tree1,tree2):
 
 		current1 = to_check1.pop()
 		current2 = to_check2.pop()
-		
+
 		if current1.data != current2.data:
 
 			return False
