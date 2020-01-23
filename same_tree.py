@@ -13,7 +13,7 @@ class TreeNode(object):
 
 
 def same_tree(tree1,tree2):
-	"""Given two binary trees returns T/F if they're equal"""
+	"""Given two binary trees returns T/F depending on if they're equal"""
 
 	to_check1 = [tree1.left,tree1.right,tree1]
 	to_check2 = [tree2.left,tree2.right,tree2]
