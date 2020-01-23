@@ -9,7 +9,7 @@ class TreeNode(object):
 	def __repr__(self):
 		"""Returns human readable tree"""
 
-		return f"<Node:\nData:{self.data}, Left:{self.left}, Right:{self.right}>"
+		return f"<{self.data}>"
 
 
 def same_tree(tree1,tree2):
@@ -40,13 +40,6 @@ def same_tree(tree1,tree2):
 		
 
 	return True
-
-
-
-
-
-
-
 
 
 tree_one = TreeNode(1)
