@@ -17,26 +17,31 @@ def same_tree(tree1,tree2):
 
 	current1 = tree1
 	current2 = tree2
-	to_check1 = [current1.left,current1.right]
-	to_check2 = [current2.left,current2.right]
+	to_check1 = [tree1.left,tree1.right,tree1]
+	to_check2 = [tree2.left,tree2.right,tree2]
 
 	while to_check1 and to_check2:
 
-		if current1 != current2:
+		current1 = to_check1.pop()
+		current2 = to_check2.pop()
+		
+		if current1.data != current2.data:
 
 			return False
 
 		else:
 
-			current1 = to_check1.pop()
-			current2 = to_check2.pop()
+			if current1.left and current1.right:
+				to_check1.append(current1.left)
+				to_check1.append(current1.right)
 
-			to_check1.append(current1.left)
-			to_check1.append(current1.right)
-			to_check2.append(current2.left)
-			to_check2.append(current2.right)
+			if current2.left and current2.right:
+				to_check2.append(current2.left)
+				to_check2.append(current2.right)
 
-		return True
+		
+
+	return True
 
 
 
@@ -47,12 +52,12 @@ def same_tree(tree1,tree2):
 
 
 tree_one = TreeNode(1)
-tree_one.right = 3
-tree_one.left = 2
+tree_one.right = TreeNode(3)
+tree_one.left = TreeNode(2)
 
 tree_two = TreeNode(1)
-tree_two.right = 3
-tree_two.left = 2
+tree_two.right = TreeNode(3)
+tree_two.left = TreeNode(2)
 
 print(same_tree(tree_one,tree_two))
 
