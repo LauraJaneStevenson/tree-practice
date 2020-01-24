@@ -14,12 +14,14 @@ def print_tree_levels(tree):
 	def create_levels(node,level):
 
 		if level == len(levels):
-			# start an new level as empty list
+			# start a new level as empty list
 			levels.append([])
 
 		# add value to nested list
 		levels[level].append(node.data)
 
+		# recursively call left and right children 
+		# and add to level
 		if node.left:
 			create_levels(node.left,level + 1)
 

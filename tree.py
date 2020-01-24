@@ -13,7 +13,7 @@ class Node(object):
 	def __repr__(self):
 		"""Returns human readable tree"""
 
-		return f"<Node: {self.data}>"
+		return f"<Tree: {self.data}>"
 
 class Tree(object):
 
