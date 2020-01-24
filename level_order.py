@@ -5,31 +5,32 @@ def print_tree_levels(tree):
 	level order traversal of its nodes' values. 
 	(ie, from left to right, level by level)."""
 
-	nodes_remaining = [[tree]]
-	to_return = []
+
+	levels = []
+
+	if not tree:
+		return levels
+
+	def create_levels(node,level):
+
+		if level == len(levels):
+			# start an new level as empty list
+			levels.append([])
+
+		# add value to nested list
+		levels[level].append(node.data)
+
+		if node.left:
+			create_levels(node.left,level + 1)
+
+		if node.right:
+			create_levels(node.right,level + 1)
 
 
-	while nodes_remaining:
 
-		current = nodes_remaining.pop(0)
+	create_levels(tree,0)
+	return levels
 
-		temp_list = []
-
-		for node in current:
-
-			if node:
-
-				temp_list.append(node.data)
-
-			if node.left or node.right:
-
-				nodes_remaining.append([node.left,node.right])
-
-		to_return.append(temp_list)
-
-	return to_return
-
-		
 
 
 tree_one = TreeNode(1)
