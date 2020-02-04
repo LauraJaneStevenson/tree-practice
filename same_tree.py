@@ -46,9 +46,13 @@ tree_one = TreeNode(1)
 tree_one.right = TreeNode(3)
 tree_one.left = TreeNode(2)
 
-tree_two = TreeNode(1)
-tree_two.right = TreeNode(3)
+tree_two = TreeNode(5)
+tree_two.right = TreeNode(1)
 tree_two.left = TreeNode(2)
+
+tree_two.right.left = TreeNode(2)
+tree_two.right.right = TreeNode(3)
+
 
 print(same_tree(tree_one,tree_two))
 
